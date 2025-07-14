@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="700" prefHeight="450">
+
+    <Label layoutX="270" layoutY="20" text="Relatórios" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <Label layoutX="40" layoutY="70" text="Filtros:"/>
+    <ComboBox layoutX="100" layoutY="65" prefWidth="150" promptText="Tipo de Procedimento"/>
+    <DatePicker layoutX="270" layoutY="65" prefWidth="120" promptText="Data Inicial"/>
+    <DatePicker layoutX="410" layoutY="65" prefWidth="120" promptText="Data Final"/>
+    <Button layoutX="550" layoutY="65" text="Filtrar" prefWidth="80"/>
+
+    <TableView layoutX="40" layoutY="110" prefWidth="620" prefHeight="250">
+        <columns>
+            <TableColumn text="Paciente" prefWidth="160"/>
+            <TableColumn text="Procedimento" prefWidth="160"/>
+            <TableColumn text="Data" prefWidth="120"/>
+            <TableColumn text="Profissional" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <Button layoutX="480" layoutY="380" text="Exportar PDF" prefWidth="120"/>
+    <Button layoutX="610" layoutY="380" text="Voltar" prefWidth="80"/>
+</AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="Controller.HistoricoConsultasController"
+      spacing="10" 
+      prefWidth="700" 
+      prefHeight="500">
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Buscar Cliente:"/>
+        <TextField fx:id="campoBusca" prefWidth="200" promptText="Nome ou CPF"/>
+        <Button fx:id="botaoBuscar" text="Buscar"/>
+    </HBox>
+    
+    <TableView fx:id="tabelaClientes" prefHeight="180">
+        <columns>
+            <TableColumn text="Nome" prefWidth="200" fx:id="colunaNome"/>
+            <TableColumn text="CPF" prefWidth="120" fx:id="colunaCpf"/>
+            <TableColumn text="Última Consulta" prefWidth="120" fx:id="colunaUltimaConsulta"/>
+        </columns>
+    </TableView>
+    
+    <Label text="Histórico de Consultas" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="tabelaConsultas" prefHeight="220">
+        <columns>
+            <TableColumn text="Data" prefWidth="150" fx:id="colunaData"/>
+            <TableColumn text="Status" prefWidth="100" fx:id="colunaStatus"/>
+            <TableColumn text="Observações" prefWidth="350" fx:id="colunaObservacoes"/>
+        </columns>
+    </TableView>
+    
+    <HBox spacing="10" alignment="BOTTOM_RIGHT">
+        <Button fx:id="botaoNovaConsulta" text="Nova Consulta"/>
+        <Button fx:id="botaoEditarStatus" text="Editar Status"/>
+        <Button fx:id="botaoVoltar" text="Voltar"/>
+    </HBox>
+</VBox>

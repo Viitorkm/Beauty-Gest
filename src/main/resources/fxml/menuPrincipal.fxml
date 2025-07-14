@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="Controller.MenuPrincipalController"
+      spacing="20" 
+      alignment="CENTER" 
+      prefWidth="300" 
+      prefHeight="200">
+    
+    <Button text="Cadastrar Cliente" 
+            fx:id="botaoCadastro" 
+            onAction="#abrirCadastroCliente" 
+            prefWidth="200"/>
+            
+    <Button text="Histórico de Consultas" 
+            fx:id="botaoHistorico" 
+            onAction="#abrirHistoricoConsultas" 
+            prefWidth="200"/>
+</VBox>
