@@ -1,0 +1,26 @@
+-- Criação da tabela paciente
+CREATE TABLE paciente (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    telefone VARCHAR(20) DEFAULT NULL,
+    email VARCHAR(100) DEFAULT NULL,
+    alergias TEXT DEFAULT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY cpf (cpf),
+    UNIQUE KEY email (email)
+);
+
+-- Criação da tabela consulta
+CREATE TABLE consulta (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    paciente_id INT(11) NOT NULL,
+    data DATETIME NOT NULL,
+    status ENUM('agendada', 'realizada', 'cancelada') NOT NULL DEFAULT 'agendada',
+    observacoes TEXT DEFAULT NULL,
+    PRIMARY KEY (id),
+    KEY paciente_id (paciente_id),
+    CONSTRAINT fk_consulta_paciente FOREIGN KEY (paciente_id) REFERENCES paciente(id)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
